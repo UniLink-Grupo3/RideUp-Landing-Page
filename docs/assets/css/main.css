@@ -586,6 +586,32 @@ section {
     color: #2959ad!important
 }
 
+/* Botones de cambio de idioma */
+#cssmenu ul li.lang-switch {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+#cssmenu ul li.lang-switch button {
+    background-color: transparent;
+    border: 1px solid #1e1e1e;
+    color: #f4c23d;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1.1rem; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#cssmenu ul li.lang-switch button:hover {
+    background-color: #f4c23d;
+    color: #fff;
+    border-color: #f4c23d;
+}
+/*Hasta aqui*/
+
 .site-header {
     position: absolute;
     z-index: 9999;
@@ -649,7 +675,8 @@ section {
 }
 
 .site-header #cssmenu>ul>li {
-    float: left
+    float: left;
+	display: flex
 }
 
 .site-header #cssmenu.align-center>ul {

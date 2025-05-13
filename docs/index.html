@@ -57,11 +57,15 @@
             </div>
             <div id='cssmenu' role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href='index.html' aria-current="page">Home</a></li>
+                    <li><a href='index.html' data-i18n="home" aria-current="page">Home</a></li>
                     <li><a href='#services'>Services</a></li>
                     <li><a href='#subscriptions'>Plans</a></li>
                     <li><a href='#about-us'>About Us</a></li>
                     <li><a href='#contact-us'>Contact Us</a></li>
+                    <li class="lang-switch">
+                        <button onclick="changeLanguage('en')">EN</button>
+                        <button onclick="changeLanguage('es')">ES</button>
+                    </li>
                 </ul>
             </div>
 
@@ -665,6 +669,26 @@
 
 <!-- Custom Js -->
 <script src="assets/js/custom.js"></script>
+
+
+<script>
+    const translations = {
+        en: {
+            home: "Home"
+        },
+        es: {
+            home: "Inicio"
+        }
+    };
+
+    function changeLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            el.textContent = translations[lang][key];
+        });
+    }
+</script>
+
 
 </body>
 </html>
